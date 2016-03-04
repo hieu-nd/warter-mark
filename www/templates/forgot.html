@@ -1,0 +1,33 @@
+<style type="text/css">
+.input-label {
+    color: green;
+}
+</style>
+<ion-view cache-view="false" hide-nav-bar="true">
+    <ion-content scroll="false">
+        <div class="list" style="padding-top: 20%;">
+            <h2 class="center" style="    font-size: 25px;    color: green;">Login</h2>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="john@suhr.com" ng-model="User.email" ng-keyup="checkEmailExit()">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="password" ng-model="User.password">
+            </label>
+            <div class=" center padding">
+                <button class="button button-block button-outline button-balanced " ng-click="signin()">Login</button>
+            </div>
+            <div class="row">
+                <div class="col center padding">
+                    <button class="button button-block button-outline button-balanced" ng-click="signinfacebook()">Facebook</button>
+                </div>
+                <div class="col center padding">
+                    <button class="button  button-block button-outline button-balanced" ng-click="signingoogle()">Google</button>
+                </div>
+            </div>
+            <a style="color: #33cd5f; width: 100%;float: left;text-align: center;" href="#" ng-click="gotosignup()">Sing Up</a>
+        </div>
+       
+    </ion-content>
+</ion-view>

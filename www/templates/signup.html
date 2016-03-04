@@ -1,0 +1,41 @@
+<ion-view cache-view="false" title="Sign Up">
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-positive" ng-click="CreateAccount()">
+            Create
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <a class="item center" href="#">
+                <img ng-click="SelectImage()" ng-src="{{User.userimage}}" ng-model="User.userimage" style="width: 100px;    height: 100px;    border-radius: 50%;    border: 1px solid green;">
+            </a>
+           <!--  <label class="item item-input item-stacked-label">
+                <span class="input-label">Gender</span>
+                <div class="row">
+                    <div class="col col-50">
+                        <ion-radio ng-model="$parent.User.gender" ng-value="'male'" name="gender">Male</ion-radio>
+                    </div>
+                    <div class="col col-50">
+                        <ion-radio ng-model="$parent.User.gender" ng-value="'female'" name="gender">Female</ion-radio>
+                    </div>
+                </div>
+            </label> -->
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Full Name</span>
+                <input type="text" placeholder="John" ng-model="User.fullname">
+            </label>
+           
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="john@suhr.com" ng-model="User.email" ng-keyup="checkEmailExit()">
+                <p style="color: red" ng-show="!isEmailAvailable">Email Not Available</p>
+            </label>
+          
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="password" ng-model="User.password">
+            </label>
+        </div>
+       
+    </ion-content>
+</ion-view>

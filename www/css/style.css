@@ -1,0 +1,77 @@
+/* Empty. Add your own CSS if you like */
+
+
+/* Empty. Add your own CSS if you like */
+
+a {
+    text-decoration: none;
+}
+
+.popup-register {
+    background: transparent;
+}
+
+.center {
+    text-align: center;
+}
+
+.bar-footer {
+    margin-bottom: 10px;
+}
+
+.bar-footer .row {
+    padding: 0px;
+}
+
+.bar-footer .row .col a {
+    text-decoration: none;
+    color: #333;
+}
+
+.bar-footer .row .col i {
+    font-size: 18px;
+}
+
+.bar-footer .row .col span {
+    display: block;
+}
+
+.item-avatar {
+    height: 140px;
+    padding-left: 140px;
+}
+
+.item-avatar img {
+    max-width: 100px !important;
+    max-height: 100px !important;
+}
+
+.infobox-wrapper {}
+
+.button.button-balanced {
+    background-color: #28a54c;
+}
+.camera-right{
+	font-size: 25px;
+    top: 5px;
+    position: absolute;
+    right: 40px;
+}
+.cloud-right{
+	font-size: 25px;
+    top: 5px;
+    position: absolute;
+    right: 0px;
+}
+.selected{
+	
+}
+ .bar-footer .row .selected a{
+	color: #0c60ee;
+}
+.icon-save-right{
+	font-size: 25px;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
