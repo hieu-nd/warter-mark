@@ -161,15 +161,90 @@ angular.module('controllers', [])
             });
         }
     })
+
     .controller('HomeController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate,
         $ionicLoading, $location, $state, $ionicModal, userService) {
 
+        $scope.$on("$ionicView.loaded", function() {
+        //Put your script in here!
+
+        });
     })
+
     .controller('GalleryController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate,
         $ionicLoading, $location, $state, $ionicModal, userService) {
 
     })
-      .controller('UploadImageController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate,
+
+    .controller('UploadImageController', function($scope, $rootScope, $ionicHistory, $ionicSideMenuDelegate,
         $ionicLoading, $location, $state, $ionicModal, userService) {
 
+
+        $scope.watermarkImg = function(){
+            //console.log("fnc wartermark");
+
+            //if ($scope.txt.src = ''){
+            if ($scope.data.modeWatermark == 'txt' && $scope.txt.src == ''){
+                text=' ';
+                path='';
+            } else if ($scope.data.modeWatermark == 'txt') {
+                text= $scope.txt.src;
+                path=''
+            } else {
+                path= $scope.img.src;
+                text='';
+            }
+
+            textWidth= 130;
+            textSize= 13;
+            textColor= 'white';
+            textBg= 'rgba(0, 0, 0, 0.4)';
+
+            //Img output info
+            gravity= 'se'; // nw | n | ne | w | e | sw | s | se
+            opacity= 0.7;
+            margin= 10;
+            outputWidth= 'auto';
+            outputHeight= 'auto';
+            outputType= 'jpg'; // jpeg | png | webp
+
+
+            imgURL = $('#watermarkId').watermark({
+
+                path: path,
+                //
+                text: text,
+                textWidth: textWidth,
+                textSize: textSize,
+                textColor: textColor,
+                textBg: textBg,
+                //
+                gravity: gravity,
+                opacity: opacity,
+                margin: margin,
+                outputWidth: outputWidth,
+                outputHeight: outputHeight,
+                outputType: outputType
+            });
+
+            $('#watermarkId').append('<img id= "watermarkId" src="' + imgURL + '">');
+        };
+
+        $scope.modeWatermarkList = [
+        { text: "Logo", value: "lg" },
+        { text: "Text", value: "txt" }
+        ];
+        
+        $scope.data = {
+            modeWatermark: 'lg'
+        };
+
+        $scope.img = {src: '/img/ionic.png'};
+        $scope.txt = {src: ''};
+
+
+        $scope.$on("$ionicView.loaded", function() {
+        //Put your script in here!
+        });
     });
+
